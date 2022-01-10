@@ -25,6 +25,7 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="Название товара")
+
     price = models.FloatField(verbose_name="Цена товара")
     digital = models.BooleanField(
         default=False, null=True, blank=True, verbose_name="Шоколадное"
