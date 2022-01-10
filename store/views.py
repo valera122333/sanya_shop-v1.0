@@ -23,6 +23,10 @@ def addpage(request):
     return render(request, "store/addpage.html", {"form": form})
 
 
+def contacts(request):
+    return render(request, "store/contacts.html")
+
+
 def store(request):
     data = cartData(request)
 

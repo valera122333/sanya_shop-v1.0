@@ -59,8 +59,14 @@
 		}
 		console.log('Cart:', cart)
 
-	</script>
 
+
+	</script>
+	<style>
+		footer {
+			margin-top: 50px;
+		}
+	</style>
 </head>
 
 <body>
@@ -79,7 +85,12 @@
 							class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="{% url 'addpage' %}">Добавить товар <span
+					<a class="nav-link" href="{% url 'addpage' %}">Добавить новый товар <span
+							class="sr-only">(current)</span></a>
+				</li>
+
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'contacts' %}">Контактная информация <span
 							class="sr-only">(current)</span></a>
 				</li>
 
@@ -119,5 +130,22 @@
 
 	<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 </body>
+<footer class="bg-dark text-center text-white">
+
+	<div class="container p-4">
+
+		<section class="mb-4">
+			<p>
+				Добро пожаловать в наш онлайн магазин мороженного
+			</p>
+		</section>
+
+
+		<div class="text-center p-3" style="background-color: rgba(38, 177, 241, 0.2);">
+			© футер 2021 от сани
+
+		</div>
+
+</footer>
 
 </html>

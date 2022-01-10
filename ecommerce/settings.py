@@ -127,3 +127,11 @@ MEDIA_URL = "/images/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": os.path.join(BASE_DIR, "coolsite_cache"),
+    }
+}
