@@ -15,7 +15,8 @@ class ContactForm(forms.Form):
 
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200)
 
@@ -25,12 +26,15 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="Название товара")
+    description = models.CharField(
+        max_length=200, verbose_name="описание товара")
 
     price = models.FloatField(verbose_name="Цена товара")
     digital = models.BooleanField(
         default=False, null=True, blank=True, verbose_name="Шоколадное"
     )
-    image = models.ImageField(null=True, blank=True, verbose_name="Изображение товара")
+    image = models.ImageField(null=True, blank=True,
+                              verbose_name="Изображение товара")
 
     def __str__(self):
         return self.name
@@ -90,7 +94,8 @@ class OrderItem(models.Model):
 
 
 class ShippingAddress(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+    customer = models.ForeignKey(
+        Customer, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
     address = models.CharField(max_length=200, null=False)
     city = models.CharField(max_length=200, null=False)
